@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{%extends 'MyApps1/base.html'%}
+{%block body_block%}
+<h2>List of All-Companies</h2><hr />
+<ol>
+    {%for company in company_list%}
+        <h3>
+            <li>
+                <a href="/{{company.id}}">{{company.name|upper}}</a>
+            </li>
+        </h3>
+    {%endfor%}
+</ol>
+{%endblock %}
