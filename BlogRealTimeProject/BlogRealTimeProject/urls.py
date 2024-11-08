@@ -15,10 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,re_path
 from BlogApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('<year>/<month>/<day>/<post>/', views.post_detail_view,name='post_detail'),
+    path("<id>/share/", views.mail_send_view),
+    path("bssample/",views.bs_sample_view),
+    re_path('^.*$', views.post_list_view),
+
 ]

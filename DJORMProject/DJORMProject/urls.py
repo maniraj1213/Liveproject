@@ -21,4 +21,5 @@ from MyApps1 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('display/', views.display_view),
+    path('hiii/', views.display_view),
 ]
