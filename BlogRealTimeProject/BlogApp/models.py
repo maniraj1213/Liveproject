@@ -4,6 +4,7 @@ from django.utils import timezone
 # Create your models here.
 #from django.core.urlresolvers import reverse #old-lib
 from django.urls import reverse	#new-lib
+from taggit.managers import TaggableManager
 
 # Create your models here.
 class CustomManager(models.Manager):
@@ -21,6 +22,7 @@ class Post(models.Model):
 	updated=models.DateTimeField(auto_now=True)  #datetime of save() action
 	status=models.CharField(max_length=10,choices=STATUS_CHOICES,default='draft')
 	objects=CustomManager();
+	tags = TaggableManager()
 	class Meta:
 		ordering=('-publish',)
 		def __str__(self):

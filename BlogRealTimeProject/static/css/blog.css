@@ -16,11 +16,24 @@ h1{
     padding: 0 0 10px 0;
 }
 #date{
-    color:yellow;
+    color:green;
     font-size:12px;
     font-style: italic;
 }
 body{
-    background: maroon;
+    background: red;
     color:white;
+}
+
+#ch{
+    color:yellow;
+    font-style: italic;
+}
+.cb{
+    background-color: lightcyan;
+    color:green;
+}
+
+#la{
+    background-color: white;
 }

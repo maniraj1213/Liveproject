@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 {%extends 'BlogApp/base.html'%}
-{%block title%}SRI SAI BLOG{%endblock%}
+{%block title%}MANIRAJ BLOG{%endblock%}
 {%block content%}
-    <h1>SRI SAI Blog</h1>
+    <h1>MANIRAJ BLOG</h1>
     <hr />
+     {%if tag%}
+        <h2>Posts tagged with "{{tag.name}}"</h2>
+    {%endif%}
     {%for post in post_list%}
         <h2><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
+        <p>Tags:{{post.tags.all|join:','}}</p>
         <p id='date'>Published on {{post.publish}} by {{post.author|title}}</p>
         {{post.body| truncatewords:10|linebreaks}}
     {%endfor%}
     {%include 'BlogApp/pagination.html' with page=post_list%}
+    {% comment %}{%include 'BlogApp/pagination.html' with page=page_obj%} {%endcomment %}
 {%endblock%}
